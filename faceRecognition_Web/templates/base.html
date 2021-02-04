@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Recognition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .font-detail {
+            font-size: 18px;
+        }
+        
+        .font-en {
+            font-family: Lucida Console, Courier, monospace;
+            font-size: 400%;
+        }
+        
+        .font-th {
+            font-family: "Pattaya", sans-serif;
+        }
+        
+        .font-haed {
+            font-family: 'Fugaz One', cursive;
+            font-size: 400%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid jumbotron-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 ml-5 mt-3 text-center">
+                    <img src="{% static 'image/face-detection.png' %}" style="width: 180px; height: 180px" alt="logo Image" />
+                </div>
+                <div class="col-lg-8 mt-4 text-center">
+                    <b class="font-haed">FACE RECOGNITION</b>
+                    <br />
+                    <div class="row mt-3 ml-5">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <a href="{% url 'home' %}" class="btn btn-lg">Detail</a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'add_image' %}" class="btn btn-lg">Add Image</a>
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'report' %}" class="btn btn-lg">Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container bg-color p-2">
+        {% block page_content %}{% endblock %}
+    </div>
+    <br />
+    <footer class="py-3 bg-grey">
+        <p class="m-0 text-dark text-center">
+            Copyright &copy; Suan Sunandha Rajabhat University
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+body{
+  background-color: #e8e8e8;
+}
+.jumbotron-custom {
+  background-color: #e8e8e8;
+  padding: 0px;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+.bg-color {
+  border-style: solid;
+  border-width: thick;
+  border-color: #add9db;
+  background-color: #fff3e8
+}
+.btn {
+  background-color: #f48224;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: none;
+  position: relative;
+  border-radius: 0 !important;
+  border: none;
+  transition: all 0.3s ease 0s;
+}
+.btn:hover,
+.btn.active:hover {
+  color: #ffffff;
+}
+.btn:before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  background-color: #2e0014;
+  width: 30%;
+  height: 4px;
+  transition: all 0.3s ease 0s;
+}
+.btn:after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  background-color: #2e0014;
+  width: 30%;
+  height: 4px;
+  transition: all 0.3s ease 0s;
+}
+.btn:hover:before,
+.btn:hover:after,
+.btn.active:before,
+.btn.active:after {
+  width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .btn {
+    margin-bottom: 50px !important;
+  }
+}

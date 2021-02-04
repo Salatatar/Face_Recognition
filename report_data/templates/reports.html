@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block page_content %}
+<div class="container">
+<h1 class="mt-4 mb-4 font-th">สรุปการเข้าเรียน</h1>
+  <table id="myTable" class="cell-border" class="table mt-4">
+    <thead class="text-center">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Learn</th>
+        <th>Late</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      {% for record in data %}
+      <tr>
+        <td>
+          <img
+            src="/static/image/{{ record.Name }}.jpg"
+            style="width: 80px; height: 80px"
+          />
+        </td>
+        <td>{{ record.Name }}</td>
+        <td>{{ record.Subject }}</td>
+        <td>{{ record.Learn }}</td>
+        <td>{{ record.Late }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#myTable ").DataTable();
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js "></script>
+<link
+  rel="stylesheet "
+  type="text/css "
+  href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css "
+/>
+{% endblock %}
