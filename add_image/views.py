@@ -45,7 +45,7 @@ def add(request):
 def add_image(request):
     subject = ""
     if request.method == "POST":
-        form = ImageForm(data = request.POST, files = request.FILES)
+        form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             obj = form.instance
